@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="description" content="Platform for Alumni, Students & Faculty"/>
+  <meta name="language" content="en_US"/>
+  <meta http-equiv="content-language" content="en_US"/>
+
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    name="viewport">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+  <meta property="og:image" content="https://s3.amazonaws.com/almaconnect/uploads/AC_logo_icon_06.png"/>
+
+  <title>BuyerMates</title>
+  <%= csrf_meta_tag %>
+
+  <link rel="icon" type="image/png" href="/assets/AC.ico" />
+
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800' rel='stylesheet' type='text/css'/>
+  <link type="text/css" rel="stylesheet" href="//fast.fonts.com/cssapi/87717315-fa2e-4366-a05f-0a4627793655.css"/>
+
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'ac-head' -%>
+
+</head>
+<body class="body <%= body_class ||= '' %>">
+  <%= yield %>
+  <%= javascript_include_tag '//connect.facebook.net/en_US/all.js' -%>
+</body>
+</html>

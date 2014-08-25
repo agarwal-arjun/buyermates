@@ -1,0 +1,12 @@
+<div>
+  <% if current_user %>
+    Welcome <%= current_user.email %>, This is our home page
+    <a href="/signout">Logout</a>
+  <% else %>
+    Welcome, This is our home page
+    <a href="/users/sign_in">Login</a>
+    <a href="/users/sign_up">Sign Up</a>
+  <% end %>
+
+</div>
+
