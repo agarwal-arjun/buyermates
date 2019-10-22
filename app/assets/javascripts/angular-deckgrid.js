@@ -214,10 +214,9 @@ angular.module('akoenig.deckgrid').factory('Deckgrid', [
          *
          */
         Deckgrid.prototype.$$getMediaQueries = function $$getMediaQueries () {
-            var stylesheets = [],
-                mediaQueries = [];
+            let mediaQueries = [];
 
-            stylesheets = Array.prototype.concat.call(
+            let stylesheets = Array.prototype.concat.call(
                 Array.prototype.slice.call(document.querySelectorAll('style[type=\'text/css\']')),
                 Array.prototype.slice.call(document.querySelectorAll('link[rel=\'stylesheet\']'))
             );
@@ -231,8 +230,8 @@ angular.module('akoenig.deckgrid').factory('Deckgrid', [
             }
 
             function hasDeckgridStyles (rule) {
-                var regexe   = /\[(\w*-)?deckgrid\]::?before/g,
-                    i        = 0,
+                let regexe = /\[(\w*-)?deckgrid\]::?before/g,
+                    i = 0,
                     selector = '';
 
                 if (!rule.media || angular.isUndefined(rule.cssRules)) {
@@ -279,7 +278,7 @@ angular.module('akoenig.deckgrid').factory('Deckgrid', [
          *
          */
         Deckgrid.prototype.$$createColumns = function $$createColumns () {
-            var self = this;
+            const self = this;
 
             if (!this.$$scope.layout) {
                 return $log.error('angular-deckgrid: No CSS configuration found (see ' +
@@ -318,7 +317,7 @@ angular.module('akoenig.deckgrid').factory('Deckgrid', [
          *
          */
         Deckgrid.prototype.$$getLayout = function $$getLayout () {
-            var content = $window.getComputedStyle(this.$$elem, ':before').content,
+            let content = $window.getComputedStyle(this.$$elem, ':before').content,
                 layout;
 
             if (content) {
@@ -366,7 +365,7 @@ angular.module('akoenig.deckgrid').factory('Deckgrid', [
          *
          */
         Deckgrid.prototype.$$onModelChange = function $$onModelChange (newModel, oldModel) {
-            var self = this;
+            const self = this;
 
             if (oldModel.length !== newModel.length) {
                 self.$$createColumns();
@@ -379,7 +378,7 @@ angular.module('akoenig.deckgrid').factory('Deckgrid', [
          *
          */
         Deckgrid.prototype.destroy = function destroy () {
-            var i = this.$$watchers.length - 1;
+            let i = this.$$watchers.length - 1;
 
             for (i; i >= 0; i = i - 1) {
                 this.$$watchers[i]();
